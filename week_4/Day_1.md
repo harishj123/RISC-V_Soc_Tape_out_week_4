@@ -44,7 +44,6 @@ The operation of these MOSFETs depends on:
 | Channel type | n-type | p-type |
 | Carrier type | Electrons | Holes |
 | Active when | Vgs > Vt | Vgs < Vt |
-| Symbol | ![NMOS Symbol](https://i.imgur.com/XpjI3Jm.png) | ![PMOS Symbol](https://i.imgur.com/5sS7iXo.png) |
 
 - **NMOS** conducts when **Vgs > Vt**  
 - **PMOS** conducts when **Vgs < Vt**
