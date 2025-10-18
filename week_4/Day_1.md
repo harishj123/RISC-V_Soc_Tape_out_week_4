@@ -130,7 +130,6 @@ Id = μn * Cox * (W / L) * [ (Vgs - Vt) * Vds - (Vds² / 2) ]
 
 ### 🟢 **Linear (Resistive) Region**
 Condition:
-```
 
 Vds < (Vgs - Vt)
 
@@ -197,7 +196,7 @@ less sky130_fd_pr__nfet_01v8__tt.pm3.spice
 less sky130_fd_pr__nfet_01v8__tt.corner.spice
 cd ../../
 vim day1_nfet_idvds_L2_W5.spice
-````
+```
 
 ---
 
