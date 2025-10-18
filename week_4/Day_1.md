@@ -10,17 +10,6 @@ By the end of this lab you’ll know how to interpret Id–Vds curves, understan
 
 Let’s dive in ⚡  
 
-Perfect — you’re absolutely right 👍
-
-GitHub **doesn’t render LaTeX-style inline equations (`[ ... ]` or `\(...\)`)** like in docs or PDFs.
-Instead, it supports code formatting and HTML-style math using backticks and Unicode subscripts/superscripts.
-
-Below is your **fully GitHub-rendered and readable version** — all formulas rewritten to display perfectly on GitHub Markdown (no LaTeX required).
-You can copy-paste this as your GitHub file directly (`README.md` or report file).
-
----
-
-```markdown
 # 🌟 **WEEK 4 – DAY 1**
 
 ## **Topic:** Basics of Drain Current vs Drain-to-Source Voltage (Id–Vds) Characteristics
@@ -94,20 +83,19 @@ When **Vgs > Vt**, the channel strengthens, increasing **Id**.
 2. **VSB > 0** → threshold voltage increases due to body effect
 
 **Expression:**
-```
+
 
 Vt = Vto + γ [ √(2|φf| + VSB) - √(2|φf|) ]
 
-```
 
 Where:
 - Vto → Threshold voltage at zero body bias  
 - γ (gamma) → Body effect coefficient  
-```
+
 
 γ = √(2 * q * ε_si * NA) / Cox
 
-```
+
 - φf (Fermi potential) → (kT/q) * ln(NA / ni)  
 - Cox → Gate oxide capacitance per unit area = ε_ox / t_ox
 
@@ -116,32 +104,27 @@ Where:
 ## 🔋 **5. Induced Charge and Drain Current**
 
 For NMOS:
-```
 
 Qi(x) = -Cox * [ (Vgs - V(x)) - Vt ]
 
-```
+
 
 Drift velocity:
-```
 
 vn(x) = μn * E = -μn * (dV/dx)
 
-```
+
 
 Drain current:
-```
+
 
 Id = -Qi(x) * W * vn(x)
 
-```
 
 Substitute and integrate over the channel:
-```
 
 Id = μn * Cox * (W / L) * [ (Vgs - Vt) * Vds - (Vds² / 2) ]
 
-```
 
 ---
 
@@ -151,37 +134,28 @@ Condition:
 
 Vds < (Vgs - Vt)
 
-```
 
 Equation:
-```
 
 Id ≈ Kn * (Vgs - Vt) * Vds
 
-```
 Where:
-```
 
 Kn = μn * Cox * (W / L)
 
-```
+
 
 ---
 
 ### 🔴 **Saturation Region**
 Condition:
-```
 
 Vds ≥ (Vgs - Vt)
 
-```
-
 Equation:
-```
 
 Id = (1/2) * Kn * (Vgs - Vt)²
 
-````
 
 At this point, **channel pinch-off** occurs near the drain.
 
