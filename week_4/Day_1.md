@@ -10,144 +10,191 @@ By the end of this lab you’ll know how to interpret Id–Vds curves, understan
 
 Let’s dive in ⚡  
 
----
+## **WEEK 4 – DAY 1**
 
-## 🎯 Objective  
+### **Topic:** Basics of Drain Current vs Drain-to-Source Voltage (Id–Vds) Characteristics
 
-To study and simulate the **Id–Vds characteristics** of NMOS and PMOS transistors, analyze their operating regions, and verify theoretical behavior using **SPICE**.
+### **Objective:**
 
----
-
-## ⚙️ 1️⃣ Circuit Design and SPICE Overview  
-
-All MOS circuits are made using **PMOS** and **NMOS** transistors.  
-The simplest CMOS circuit — the **inverter** — contains:
-
-- **PMOS** → pull-up device  
-- **NMOS** → pull-down device  
-
-SPICE helps us visualize how these transistors behave for different gate and drain voltages.
+To understand the drain current characteristics of NMOS and PMOS transistors, their regions of operation, and simulate them using **SPICE**.
 
 ---
 
-## 🔋 2️⃣ NMOS and PMOS Characteristics  
+## **1. Circuit Design and SPICE Simulation**
 
-| Parameter | NMOS | PMOS |
-|------------|-------|-------|
-| Channel type | n-type | p-type |
-| Carrier type | Electrons | Holes |
-| Active when | V<sub>GS</sub> > V<sub>T</sub> | V<sub>GS</sub> < V<sub>T</sub> |
-| Role in CMOS inverter | Pull-down | Pull-up |
+All MOS circuits are built using **PMOS** and **NMOS** transistors.
+An **inverter** is the simplest CMOS circuit consisting of:
 
----
+* One **PMOS** (pull-up)
+* One **NMOS** (pull-down)
 
-## 💡 3️⃣ Why We Need SPICE  
-
-SPICE (**Simulation Program with Integrated Circuit Emphasis**) enables engineers to:
-
-- Analyze transistor behavior **before fabrication**  
-- Plot **Id–Vds** and **Id–Vgs** curves  
-- Estimate **delay and switching times**  
-- Validate **buffer delay tables** and **inverter performance**
+The operation of these MOSFETs depends on the **Drain current (Id)**, **Gate-to-Source voltage (Vgs)**, and **Drain-to-Source voltage (Vds)**.
 
 ---
 
-## 🔬 4️⃣ NMOS Structure and Threshold Voltage  
+## **2. NMOS and PMOS Characteristics**
 
-An **NMOS** has a p-type substrate with two n⁺ diffusions (source & drain).  
-At **V<sub>GS</sub> = 0 V**, both junctions are reverse-biased → no conduction.  
-Increasing **V<sub>GS</sub>** attracts electrons under the gate oxide, forming an **inversion channel**.
+| Parameter    | NMOS                                            | PMOS                                            |
+| ------------ | ----------------------------------------------- | ----------------------------------------------- |
+| Channel type | n-type                                          | p-type                                          |
+| Carrier type | Electrons                                       | Holes                                           |
+| Active when  | Vgs > Vt                                        | Vgs < Vt                                        |
+| Symbol       | ![NMOS Symbol](https://i.imgur.com/XpjI3Jm.png) | ![PMOS Symbol](https://i.imgur.com/5sS7iXo.png) |
 
-### ⚙️ Threshold Voltage Expression  
-
-\[
-V_T = V_{TO} + \gamma \left(\sqrt{2|\phi_f| + V_{SB}} - \sqrt{2|\phi_f|}\right)
-\]
-
-| Symbol | Description |
-|:--|:--|
-| **VTO** | Threshold voltage at zero body bias |
-| **γ (Gamma)** | Body-effect coefficient |
-| **φ<sub>f</sub> (Fermi potential)** | \( \frac{kT}{q}\ln\left(\frac{N_A}{n_i}\right) \) |
-| **C<sub>ox</sub>** | Gate-oxide capacitance = \( \frac{ε_{ox}}{t_{ox}} \) |
+* **NMOS** conducts when **Vgs > Vt**
+* **PMOS** conducts when **Vgs < Vt**
 
 ---
 
-## 📈 5️⃣ Induced Charge and Drain Current Derivation  
+## **3. Why We Need SPICE**
 
-\[
-Q_i(x) = -C_{ox}\big[(V_{GS}-V(x))-V_T\big]
-\]
+**SPICE (Simulation Program with Integrated Circuit Emphasis)** is used to:
 
-Drift velocity:  
-\[
-v_n(x) = μ_n E = -μ_n \frac{dV}{dx}
-\]
+* Model transistor behavior accurately.
+* Observe current–voltage characteristics (Id–Vds, Id–Vgs).
+* Estimate **delay, rise time, and fall time** using buffer delay tables.
+* Predict circuit behavior before fabrication.
 
-Channel current:  
-\[
-I_D = -W Q_i(x) v_n(x)
-\]
-
-Integrating along the channel:  
-\[
-I_D = μ_n C_{ox} \frac{W}{L}\Big[(V_{GS}-V_T)V_{DS} - \frac{V_{DS}^2}{2}\Big]
-\]
+Example:
+For an inverter, SPICE helps plot how output voltage changes with varying input, showing switching delay and threshold.
 
 ---
 
-### 🔹 Linear (Resistive) Region  
+## **4. NMOS Structure and Threshold Voltage**
 
-When \( V_{DS} < (V_{GS}-V_T) \)  
+An **NMOS** has:
 
-\[
-I_D = K_n (V_{GS}-V_T) V_{DS}
-\]
+* Source (S), Drain (D), Gate (G), and Body (B).
+* The substrate is **p-type**, with **n+** source and drain diffusions.
 
-where \( K_n = μ_n C_{ox} \frac{W}{L} \)
+At **Vgs = 0**, both junctions are **reverse-biased**, and resistance between S and D is very high.
 
-### 🔸 Saturation Region  
-
-When \( V_{DS} ≥ (V_{GS}-V_T) \)  
-
-\[
-I_D = \frac{1}{2} K_n (V_{GS}-V_T)^2
-\]
+When **Vgs increases**, electrons are attracted under the gate, forming an **inversion channel**.
 
 ---
 
-## 🧮 6️⃣ Example Simulation Setup  
+### **Threshold Voltage (Vt)**
 
-| Parameter | Value |
-|------------|--------|
-| Threshold Voltage (Vt) | 0.5 V |
-| V<sub>GS</sub> Sweep | 0.5 V → 2.5 V |
-| V<sub>DS</sub> Sweep | 0 V → 1.05 V |
+When **Vgs = Vt**, a thin channel of electrons forms at the surface → conduction starts.
 
-**Expected Results 📊**  
-- For V<sub>GS</sub> &lt; 0.5 V → transistor OFF  
-- As V<sub>GS</sub> increases → Id rises linearly  
-- Beyond V<sub>GS</sub> ≈ 2 V → early saturation  
+When **Vgs > Vt**, the channel becomes stronger → higher drain current.
+
+Two cases:
+
+1. **VSB = 0** → no body bias (normal case).
+2. **VSB > 0** → body effect increases Vt.
 
 ---
 
-## 🧰 7️⃣ SPICE Simulation Steps  
+### **Threshold Voltage Expression**
+
+[
+V_t = V_{to} + \gamma \left(\sqrt{2|\phi_f| + V_{SB}} - \sqrt{2|\phi_f|}\right)
+]
+
+Where:
+
+* **Vto** = Threshold voltage at zero body bias
+* **γ (gamma)** = Body effect coefficient
+  [
+  \gamma = \frac{\sqrt{2q \varepsilon_{si} N_A}}{C_{ox}}
+  ]
+* **φf (Fermi potential)** = (\frac{kT}{q} \ln\left(\frac{N_A}{n_i}\right))
+* **Cox** = Gate oxide capacitance per unit area = (\frac{\varepsilon_{ox}}{t_{ox}})
+
+---
+
+## **5. Induced Charge and Drain Current**
+
+For NMOS:
+[
+Q_i = -C_{ox}[(V_{gs} - V(x)) - V_t]
+]
+
+At any point x along the channel:
+
+* (Q_i(x)) is the inversion charge density.
+* (E = -\frac{dV}{dx})
+* (v_n(x) = \mu_n E = -\mu_n \frac{dV}{dx})
+
+Drift current:
+[
+I_d = -Q_i(x) W v_n(x)
+]
+
+Substituting and integrating:
+[
+I_d = \mu_n C_{ox} \frac{W}{L} [(V_{gs} - V_t)V_{ds} - \frac{V_{ds}^2}{2}]
+]
+
+---
+
+### **Linear (Resistive) Region**
+
+When (V_{ds} < (V_{gs} - V_t)),
+
+[
+I_d \approx K_n (V_{gs} - V_t) V_{ds}
+]
+where (K_n = \mu_n C_{ox} \frac{W}{L})
+
+---
+
+### **Saturation Region**
+
+When (V_{ds} \geq (V_{gs} - V_t)),
+[
+I_d = \frac{1}{2} K_n (V_{gs} - V_t)^2
+]
+
+At saturation, **channel pinch-off** occurs near the drain.
+
+---
+
+## **6. Example Simulation Setup**
+
+### **Given:**
+
+* (V_t = 0.5V)
+* Sweep (V_{gs}) = 0.5V, 1V, 1.5V, 2V, 2.5V
+* Sweep (V_{ds}) from 0 → 1.05V
+
+You’ll observe:
+
+* When (V_{gs} < 0.5V): transistor off → Id ≈ 0
+* When (V_{gs} = 1V): small Id → linear region
+* When (V_{gs} = 2V, 2.5V): high Id → saturation region starts earlier
+
+---
+
+## **7. SPICE Simulation Steps**
+
+### **SPICE Model Parameters**
+
+Include:
+
+* `VTO` → Threshold voltage
+* `GAMMA` → Body effect constant
+* `LAMBDA` → Channel-length modulation
+* `KP` or `KN_DASH` → Transconductance parameter
+
+### **SPICE Setup**
 
 ```bash
 cd
 git clone https://github.com/kunalg123/sky130CircuitDesignWorkshop.git
-cd sky130CircuitDesignWorkshop/design/sky130_fd_pr/cells/nfet_01v8/
+cd sky130CircuitDesignWorkshop/
+cd design/sky130_fd_pr/cells/nfet_01v8/
 less sky130_fd_pr__nfet_01v8__tt.pm3.spice
 less sky130_fd_pr__nfet_01v8__tt.corner.spice
 cd ../../
 vim day1_nfet_idvds_L2_W5.spice
+```
 
----
-
-### 🧾 SPICE Netlist Example
+### **SPICE Netlist Example**
 
 ```spice
-* NMOS ID–VDS Characteristics
+* NMOS ID-VDS Characteristics
 M1 drain gate source source sky130_fd_pr__nfet_01v8 W=5u L=2u
 VGS gate source 0
 VDS drain source 0
@@ -158,71 +205,28 @@ VDS drain source 0
 
 ---
 
-## 📊 8️⃣ Id–Vds Graph Interpretation
+## **8. Id vs Vds Graph**
 
-* **X-axis :** V<sub>DS</sub>
-* **Y-axis :** I<sub>D</sub>
-* Each curve → fixed V<sub>GS</sub>
-* **Knee point :** (V_{DS}=V_{GS}-V_T)
-* Beyond knee → **saturation region**
+* **X-axis**: Vds
+* **Y-axis**: Id
+* For each Vgs, you’ll get a separate curve.
+* At low Vds → linear (resistive) region.
+* At high Vds → current saturates.
 
----
-
-## ⚡ 9️⃣ Regions of Operation
-
-1. **Cut-off** → V<sub>GS</sub> < V<sub>T</sub>, no conduction
-2. **Linear / Resistive** → V<sub>DS</sub> < (V<sub>GS</sub> − V<sub>T</sub>)
-3. **Saturation** → V<sub>DS</sub> ≥ (V<sub>GS</sub> − V<sub>T</sub>) → current saturates
+The **knee point** on each curve corresponds to (V_{ds} = V_{gs} - V_t).
 
 ---
 
-## 🧾 🔟 SPICE Model Parameters
+## **9. Conclusion**
 
-| Parameter        | Meaning                    |
-| ---------------- | -------------------------- |
-| **VTO**          | Threshold voltage          |
-| **γ (Gamma)**    | Body-effect constant       |
-| **λ (Lambda)**   | Channel-length modulation  |
-| **KP / KN_DASH** | Transconductance parameter |
+* The **Id–Vds** characteristics show three regions of NMOS operation:
 
-> **SPICE Model Parameters + SPICE Netlist = SPICE Simulation Setup**
+  1. **Cutoff:** (V_{gs} < V_t), no current.
+  2. **Linear (Resistive):** (V_{ds} < (V_{gs} - V_t)), current increases linearly.
+  3. **Saturation:** (V_{ds} ≥ (V_{gs} - V_t)), current saturates.
 
----
-
-## 🧭 1️⃣1️⃣ Resistive Operation of MOSFET
-
-In the **linear region**, the MOSFET behaves as a **voltage-controlled resistor**.
-Current varies approximately linearly with V<sub>DS</sub>.
-This region is widely used in **analog applications** such as variable-resistor circuits and amplifiers.
+* **SPICE** helps visualize these regions, validate theory, and understand transistor behavior before hardware implementation.
 
 ---
 
-## 🧩 1️⃣2️⃣ Conclusion
-
-* The **Id–Vds** plots clearly show the transition between **cutoff**, **linear**, and **saturation** regions.
-* As **V<sub>GS</sub>** rises, the inversion channel strengthens → increased Id.
-* **SPICE simulations** verify theoretical behavior and provide insight into device performance.
-* This knowledge forms the foundation for **CMOS logic** and **analog design**.
-
----
-
-## 📁 Recommended Repository Structure
-
-```
-Week4/
- └── Day1_Basics_IdVds/
-      ├── README.md                 ← this file
-      ├── day1_nfet_idvds_L2_W5.spice
-      └── simulation_results.png    ← Id–Vds plot
-```
-
----
-
-🌱 *End of Day 1 — Understanding NMOS Id–Vds Characteristics through SPICE Simulation*
-
-```
-
----
-
-Would you like me to include a ready-made **Id–Vds plot (simulation_results.png)** to match this README for your GitHub folder? I can generate a clean graph showing curves for multiple V<sub>GS</sub> values (0.5 V–2.5 V).
-```
+Would you like me to make this **as a formatted lab report (with equations and SPICE output placeholders)** — e.g. in a PDF-ready format for submission?
