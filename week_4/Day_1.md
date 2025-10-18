@@ -181,7 +181,7 @@ At this point, **channel pinch-off** occurs near the drain.
 Include:
 - `VTO` → Threshold voltage  
 - `GAMMA` → Body effect constant  
-- `LAMBDA` → Channel-length modulation  
+- `LAMBDA → Channel-length modulation  
 - `KP` or `KN_DASH` → Transconductance parameter  
 
 ---
