@@ -50,6 +50,9 @@ The operation of these MOSFETs depends on:
 - **NMOS** conducts when **Vgs > Vt**  
 - **PMOS** conducts when **Vgs < Vt**
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images/nmos_characteristics.png?raw=true)
+
+
 ---
 
 ## 🧩 **3. Why We Need SPICE**
@@ -185,6 +188,8 @@ Include:
 - `LAMBDA → Channel-length modulation  
 - `KP` or `KN_DASH` → Transconductance parameter  
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images/nodes.jpg?raw=true)
+
 ---
 
 ### **SPICE Commands**
@@ -195,9 +200,24 @@ cd sky130CircuitDesignWorkshop/
 cd design/sky130_fd_pr/cells/nfet_01v8/
 less sky130_fd_pr__nfet_01v8__tt.pm3.spice
 less sky130_fd_pr__nfet_01v8__tt.corner.spice
+```
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images/nfet.jpg?raw=true)
+
+```
 cd ../../
 vim day1_nfet_idvds_L2_W5.spice
 ```
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images/ngspice.jpg?raw=true)
+
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images/ngsice_2.jpg?raw=true)
+
+
+Left Click each curve in the waveform
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images/values.jpg?raw=true)
 
 ---
 
