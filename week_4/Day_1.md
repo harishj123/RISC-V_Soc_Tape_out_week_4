@@ -30,6 +30,8 @@ An **inverter** is the simplest CMOS circuit consisting of:
 - One **PMOS** (pull-up)
 - One **NMOS** (pull-down)
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images/inverter.jpg?raw=true)
+
 The operation of these MOSFETs depends on:
 - **Drain current (Id)**
 - **Gate-to-Source voltage (Vgs)**
