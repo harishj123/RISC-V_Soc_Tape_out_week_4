@@ -1,12 +1,4 @@
-Excellent ✅ — here’s your **fully GitHub-formatted Markdown (`README.md`)** version, written exactly the way it should appear on your repository page — with emojis, headings, LaTeX-friendly math, syntax-highlighted code, and perfectly clean Markdown spacing.
 
-You can directly copy-paste this file as
-`Week4/Day1_Basics_IdVds/README.md`
-in your GitHub project.
-
----
-
-````markdown
 # 🌟 Welcome to Week 4 – Day 1  
 ## 🚀 Exploring the Basics of MOSFET Operation: *Drain Current vs Drain-to-Source Voltage (Id–Vds)*  
 
@@ -149,7 +141,6 @@ less sky130_fd_pr__nfet_01v8__tt.pm3.spice
 less sky130_fd_pr__nfet_01v8__tt.corner.spice
 cd ../../
 vim day1_nfet_idvds_L2_W5.spice
-````
 
 ---
 
