@@ -26,6 +26,10 @@ This repository contains simulation files, theoretical notes, and visualizations
 
 ---
 
+![Day 1](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/Day_1.md)
+
+
+
 ## 📅 Day 2 – MOSFET Scaling and CMOS Inverter VTC
 
 ### 📌 Topics Covered:
@@ -47,6 +51,9 @@ This repository contains simulation files, theoretical notes, and visualizations
 - Noise margins determine circuit robustness
 
 ---
+
+![Day 2](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/Day_2.md)
+
 
 ## 🛠️ Tools & Requirements
 
