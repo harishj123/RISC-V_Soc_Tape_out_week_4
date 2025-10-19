@@ -62,17 +62,3 @@ This repository contains simulation files, theoretical notes, and visualizations
 - Git, Vim (for netlist editing)
 
 ---
-
-## 🧪 How to Run Simulations
-
-```bash
-# Clone the repo
-git clone https://github.com/yourname/week4_cmos_mosfet_analysis.git
-cd week4_cmos_mosfet_analysis
-
-# Run Day 1 simulation
-ngspice day1_nfet_idvds_L2_W5.spice
-
-# Run Day 2 simulations
-ngspice day2_nfet_idvds_L015_W039.spice
-ngspice day2_nfet_idvgs_L015_W039.spice
