@@ -226,15 +226,13 @@ The Voltage Transfer Characteristic (VTC) of a CMOS inverter shows `V_out` as a 
 ---
 
 ### 4.4 VTC Key Features
-
-| Feature                 | Description                             |              |                            |
-| :---------------------- | :-------------------------------------- | ------------ | -------------------------- |
-| Logic HIGH Output       | `V_out ≈ V_DD` when `V_in` is LOW       |              |                            |
-| Logic LOW Output        | `V_out ≈ 0 V` when `V_in` is HIGH       |              |                            |
-| Transition Region       | Region where both NMOS and PMOS conduct |              |                            |
-| Switching Voltage `V_m` | Where `V_out = V_in`                    |              |                            |
-| Noise Margins           | Define reliability against input noise  |              |                            |
-| Gain                    | `                                       | dV_out/dV_in | ` in the transition region |
+| Feature                 | Description                             |          
+| :---------------------- | :-------------------------------------- |
+| Logic HIGH Output       | `V_out ≈ V_DD` when `V_in` is LOW       |                                          
+| Logic LOW Output        | `V_out ≈ 0 V` when `V_in` is HIGH       |                                         
+| Transition Region       | Region where both NMOS and PMOS conduct |                                          
+| Switching Voltage `V_m` | Where `V_out = V_in`                    |              
+| Noise Margins           | Define reliability against input noise  |     
 
 ---
 
