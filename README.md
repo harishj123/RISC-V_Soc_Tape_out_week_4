@@ -52,7 +52,7 @@ This repository contains simulation files, theoretical notes, and visualizations
 
 ---
 
-![Day 2](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/Day_2.md)
+[Day 2](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/Day_2.md)
 
 
 ## 🛠️ Tools & Requirements
