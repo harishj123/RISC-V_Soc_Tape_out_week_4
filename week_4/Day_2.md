@@ -195,6 +195,8 @@ The Voltage Transfer Characteristic (VTC) of a CMOS inverter shows `V_out` as a 
 
 ---
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images_Day2/VTC.png?raw=true)
+
 ### 4.1 Logic Operation Summary
 
 | Input `V_in` | NMOS | PMOS | Output `V_out` | Logic |
