@@ -32,6 +32,8 @@ MOSFETs operate differently depending on their **channel length (L)**. The chann
 * **Long Channel MOSFET** – Classic operation with linear carrier velocity.  
 * **Short Channel MOSFET** – Advanced operation where carrier velocity saturates due to high electric fields.
 
+  ![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images_Day2/Quadratic%20and%20linear%20graph.png?raw=true)
+
 ---
 
 ## 2. Long Channel MOSFET
@@ -39,6 +41,9 @@ MOSFETs operate differently depending on their **channel length (L)**. The chann
 ### 🧠 Concept:
 
 In long-channel MOSFETs, the carrier velocity `v` increases linearly with the electric field `E`:
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images_Day2/Drain%20current%20model.png?raw=true)
+
 
 v = μ_n * E
 
@@ -79,6 +84,8 @@ v_sat            , for E >= E_crit }
 
 ### 3.1 Drain Current (Velocity-Saturated Region)
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images_Day2/velocity%20saturation%20effect.png?raw=true)
+
 
 I_D = W * C_ox * (V_GS - V_TH) * v_sat
 
@@ -88,6 +95,9 @@ Here, `I_D` grows approximately linearly with `(V_GS - V_TH)` — velocity satur
 ---
 
 ### 3.2 Regions of Operation
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images_Day2/Region%20of%20operation.png?raw=true)
+
 
 | Region                             | Condition                        | Behavior       |
 | :--------------------------------- | :------------------------------- | :------------- |
