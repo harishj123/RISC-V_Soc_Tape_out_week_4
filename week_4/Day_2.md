@@ -108,6 +108,25 @@ Here, `I_D` grows approximately linearly with `(V_GS - V_TH)` — velocity satur
 
 ---
 
+### 3.3 Peak Current Variation
+
+The drain current is expressed as:
+Id = (Kn / 2) * (Vgs - Vth)^2 * (1 + λVds)
+
+Here, the current increases with Vgs and slightly with Vds due to channel length modulation.
+Higher Vgs values produce stronger inversion layers, resulting in greater peak current.
+
+Observation
+
+As Vgs increases, the Id–Vds curve rises upward.
+
+Peak current occurs in the saturation region where Id becomes nearly constant.
+
+Small slope in saturation is due to λ (channel length modulation).
+
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images_Day2/peak%20current%20variation.png?raw=true)
+
+
 ### 3.3 Comparison Table
 
 | Property          | Long Channel                  | Short Channel                     |
