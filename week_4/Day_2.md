@@ -135,6 +135,9 @@ ngspice day2_nfet_idvds_L015_w039.spice
 plot -vdd#branch
 ````
 
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images_Day2/ngspice.png?raw=true)
+
+
 ### Observation
 
 * The `I_D` vs `V_DS` curve exhibits **cut-off**, **linear (triode)**, and **saturation** regions.
@@ -155,6 +158,7 @@ vim day2_nfet_idvgs_L015_w039.spice
 ngspice day2_nfet_idvgs_L015_w039.spice
 plot -vdd#branch
 ```
+![image alt](https://github.com/harishj123/RISC-V_Soc_Tape_out_week_4/blob/main/week_4/images_Day2/ngspice%20id%20vs%20vgs.png?raw=true)
 
 ### Observation
 
