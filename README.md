@@ -57,7 +57,7 @@ This repository contains simulation files, theoretical notes, and visualizations
 
 ## 🛠️ Tools & Requirements
 
-- [Sky130 PDK](https://github.com/google/skywater-pdk)
+- [Sky130 PDK]([https://github.com/google/skywater-pdk](https://github.com/kunalg123/sky130CircuitDesignWorkshop))
 - [Ngspice](http://ngspice.sourceforge.net/)
 - Git, Vim (for netlist editing)
 
